@@ -29,11 +29,29 @@ void Child:: nuevoPrestamo(Objeto *o){
 
 set<string> Child:: listarObjetosPrestados(){
     set<string> prestamos;
-    if (prestado->obj != nullptr){
+    Prestados *aux = prestado;
+    if (aux->obj != nullptr){
         do{
-            prestamos.insert(prestado->obj->toString());
-            prestado = prestado->sig;
-        }while(prestado->sig != nullptr);
+            prestamos.insert(aux->obj->toString());
+            aux = aux->sig;
+        }while(aux->sig != nullptr);
+    }
+}
+
+void Child::eliminarPrestamo(Objeto *o){
+    Prestados *aux = prestado;
+    if(prestado->obj = o){
+        delete prestado->obj;
+        prestado = prestado->sig;
+        delete aux;
+    }else{
+        while(aux->sig->obj != o){
+            aux = aux->sig;
+        }
+        Prestados *borrar = aux->sig;
+        aux->sig = aux->sig->sig;
+        delete borrar->obj;
+        delete borrar;
     }
 }
 
