@@ -17,10 +17,11 @@ DTObjetoRoto::DTObjetoRoto(string nObjeto, bool r, string nChild){
     this->nombreChild = nChild;
 }
 
-std::ostream& operator<<(std::ostream &os, const DTObjetoRoto& o){
-    if(o.prestado){
-        os<<o.nombreObjeto << ", prestado SI, " << o.nombreChild;
-    }else{
-        os<<o.nombreObjeto << "prestado NO";
+std::ostream& operator<<(std::ostream& os, const DTObjetoRoto& o) {
+    if (o.prestado) {
+       return os << o.nombreObjeto << ", prestado: SI, " << o.nombreChild;
+    }
+    else {
+       return os << o.nombreObjeto << ", prestado: NO";
     }
 }
