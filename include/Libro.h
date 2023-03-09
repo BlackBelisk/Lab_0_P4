@@ -10,7 +10,7 @@ class Libro : public Objeto{
         string autor;
         int cantPaginas;
     public:
-        Libro(string, int, int, string, int);
+        Libro(string, int, estado, string, int);
         ~Libro();
 
 };
