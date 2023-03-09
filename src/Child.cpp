@@ -4,6 +4,27 @@
 #include <set>
 using namespace std;
 
+
+Prestados::Prestados(){
+    obj = nullptr;
+    sig = nullptr;
+}
+
+Prestados::Prestados(Objeto *o){
+    obj = o;
+    sig = nullptr;
+}
+
+Prestados* Prestados::añadirObj(Objeto *o){
+    Prestados *nuevo = new Prestados(o);
+    nuevo->sig = this;
+    return nuevo;
+}
+
+string Prestados::getObj(){
+    return obj->toString();
+}
+
 Child::Child (string nom, int ed, string dir, string tel){
     nombre = nom;
     edad = ed;
