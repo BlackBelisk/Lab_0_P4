@@ -17,13 +17,6 @@ class DTObjetoRoto{
         ~DTObjetoRoto();
 
     friend std::ostream& operator<<(std::ostream& os, const DTObjetoRoto& o);
-    /*{
-        if(o.prestado){
-            os<<o.nombreObjeto<<", prestado SI, "<<o.nombreChild;
-        }else{
-            os<<o.nombreObjeto<<", prestado NO";
-        }
-    }*/ //Esto va en el cpp
 };
 
 #endif

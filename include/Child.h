@@ -4,6 +4,7 @@
 #include <iostream>
 //#include "Objeto.h" 
 using namespace std;
+
 class objeto; 
 //Referencia circular de objeto, se puede cambiar por una referencia circular en Objeto.h
 //Depende de la implementación que se le de a la colección de objetos prestados 
@@ -22,5 +23,5 @@ class Child{
         string getChild();
 };
 
-
+#include "Objeto.h"
 #endif
