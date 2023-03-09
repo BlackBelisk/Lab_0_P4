@@ -7,10 +7,10 @@ using namespace std;
 
 class Libro : public Objeto{
     private:
-            string autor;
-            int cantPaginas;
+        string autor;
+        int cantPaginas;
     public:
-            
+        Libro(string, int, int, string, int);
 };
 
 #endif

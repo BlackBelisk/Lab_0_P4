@@ -2,16 +2,18 @@
 #define _CLASSOBJETO_H_
 
 #include "iostream"
-#include "Niño.h"
+#include "Child.h"
 using namespace std;
 
+//Clase Virtual Objeto.
 class Objeto{
     protected:
-            string nombre;
-            int añoComprado;
-            enum estado {Nuevo, BienConservado, Roto};
+        string nombre;
+        int añoComprado;
+        enum estado {Nuevo, BienConservado, Roto};
+        Child prestado;
     public:
-            string toString();
+          virtual string toString() = 0;
 };
 
 #endif

@@ -5,12 +5,13 @@
 #include "Objeto.h"
 using namespace std;
 
-class JuegoMesa{
+class JuegoMesa : public Objeto{
     private:
-            int edadRecomendada;
-            int cantJugadores;
+        int edadRecomendada;
+        int cantJugadores;
     public:
-            
+        JuegoMesa(string, int, int, int, int);
+
 };
 
 #endif
