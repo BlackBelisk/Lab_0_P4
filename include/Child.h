@@ -12,22 +12,10 @@ class Prestados{
     public:
             Objeto *obj;
             Prestados *sig;
-            Prestados(){
-                obj = nullptr;
-                sig = nullptr;
-            }
-            Prestados(Objeto *o){
-                obj = o;
-                sig = nullptr;
-            }
-            Prestados *añadirObj(Objeto *o){
-                Prestados *nuevo = new Prestados(o);
-                nuevo->sig = this;
-                return nuevo;
-            }
-            string getObj(){
-                return obj->toString();
-            }
+            Prestados();
+            Prestados(Objeto *o);
+            Prestados *añadirObj(Objeto *o);
+            string getObj();
 };
 
 class Child{
