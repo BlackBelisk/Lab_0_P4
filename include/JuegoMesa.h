@@ -10,7 +10,7 @@ class JuegoMesa : public Objeto{
         int edadRecomendada;
         int cantJugadores;
     public:
-        JuegoMesa(string, int, int, int, int);
+        JuegoMesa(string, int, estado, int, int);
         ~JuegoMesa();
 };
 

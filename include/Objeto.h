@@ -9,8 +9,9 @@ using namespace std;
 class Objeto{
     protected:
         string nombre;
-        int añoComprado;
+        int anioComprado;
         enum estado {Nuevo, BienConservado, Roto};
+        estado status;
         Child prestado;
     public:
           virtual string toString() = 0;
