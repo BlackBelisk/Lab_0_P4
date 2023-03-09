@@ -1,11 +1,12 @@
 #ifndef _CLASSCHILD_H_
 #define _CLASSCHILD_H_
 
-#include "iostream"
-//#include "Objeto.h"
+#include <iostream>
+//#include "Objeto.h" 
 using namespace std;
-class objeto;
-
+class objeto; 
+//Referencia circular de objeto, se puede cambiar por una referencia circular en Objeto.h
+//Depende de la implementación que se le de a la colección de objetos prestados 
 class Child{
     private:
         string nombre;

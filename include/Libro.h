@@ -1,7 +1,7 @@
 #ifndef _CLASSLIBRO_H_
 #define _CLASSLIBRO_H_
 
-#include "iostream"
+#include <iostream>
 #include "Objeto.h"
 using namespace std;
 

@@ -1,7 +1,7 @@
 #ifndef _DT_OBJETO_ROTO
 #define _DT_OBJETO_ROTO
 
-#include "iostream"
+#include <iostream>
 #include "Objeto.h"
 
 using namespace std;
