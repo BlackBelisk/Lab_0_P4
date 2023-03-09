@@ -5,17 +5,11 @@
 #include "../include/DTObjetoRoto.h"
 using namespace std;
 
-DTObjetoRoto::DTObjetoRoto(string nObjeto, bool r){
-    this->nombreObjeto = nObjeto;
-    this->prestado = r;
-    this->nombreChild = '\0';
-}
-
 DTObjetoRoto::DTObjetoRoto(string nObjeto, bool r, string nChild){
     this->nombreObjeto = nObjeto;
     this->prestado = r;
     this->nombreChild = nChild;
-}
+    }
 
 std::ostream& operator<<(std::ostream& os, const DTObjetoRoto& o) {
     if (o.prestado) {
