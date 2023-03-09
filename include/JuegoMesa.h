@@ -11,7 +11,7 @@ class JuegoMesa : public Objeto{
         int cantJugadores;
     public:
         JuegoMesa(string, int, int, int, int);
-
+        ~JuegoMesa();
 };
 
 #endif

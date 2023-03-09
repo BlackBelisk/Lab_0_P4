@@ -12,9 +12,18 @@ class DTObjetoRoto{
         bool prestado;
         string nombreChild;
     public:
-        DTObjetoRoto(string, bool); //Constructor por si no está prestado, inicializar nombreChild con la cadena vacia
-        DTObjetoRoto(string ,bool ,string); //Constructor por si e
+        DTObjetoRoto(string, bool); //Constructor por si no está prestado, inicializar nombreChild con la cadena vacía
+        DTObjetoRoto(string, bool, string); //Constructor por si está prestado
         ~DTObjetoRoto();
+
+    friend std::ostream& operator<<(std::ostream& os, const DTObjetoRoto& o);
+    /*{
+        if(o.prestado){
+            os<<o.nombreObjeto<<", prestado SI, "<<o.nombreChild;
+        }else{
+            os<<o.nombreObjeto<<", prestado NO";
+        }
+    }*/ //Esto va en el cpp
 };
-ostream &operator<<(ostream &o, const string &s);
+
 #endif

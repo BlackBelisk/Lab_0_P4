@@ -11,6 +11,8 @@ class Libro : public Objeto{
         int cantPaginas;
     public:
         Libro(string, int, int, string, int);
+        ~Libro();
+
 };
 
 #endif
