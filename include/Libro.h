@@ -12,7 +12,7 @@ class Libro : public Objeto{
     public:
         Libro(string, int, estado, string, int);
         ~Libro();
-        string toString();
+        virtual string toString();
 
 };
 

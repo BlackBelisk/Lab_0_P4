@@ -12,7 +12,7 @@ class JuegoMesa : public Objeto{
     public:
         JuegoMesa(string, int, estado, int, int);
         ~JuegoMesa();
-        string toString();
+        virtual string toString();
 };
 
 #endif
