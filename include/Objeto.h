@@ -16,6 +16,7 @@ class Objeto{
         int anioComprado;
         estado status;
         Child* prestado;
+        Objeto(string, int, estado);
     public:
         virtual string toString() = 0;
 };
