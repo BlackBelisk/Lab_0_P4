@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string.h>
 #include "../include/Libro.h"
+#include "../include/Objeto.h"// no se si faltan mas includes
 using namespace std;
 
 class Libro : public Objeto
