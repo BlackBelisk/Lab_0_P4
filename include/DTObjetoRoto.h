@@ -2,6 +2,7 @@
 #define _DT_OBJETO_ROTO
 
 #include <iostream>
+#include "Utils.h"
 #include "Objeto.h"
 
 using namespace std;

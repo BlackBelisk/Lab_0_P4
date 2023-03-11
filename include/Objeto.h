@@ -4,10 +4,10 @@
 #include <stdio.h>
 #include <string.h>
 #include <iostream>
+#include "Utils.h"
 #include "Child.h"
 
 using namespace std;
-enum estado {Nuevo = 0, BienConservado, Roto};
 
 //Clase Virtual Objeto.
 class Objeto{

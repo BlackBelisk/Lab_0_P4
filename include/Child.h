@@ -3,7 +3,8 @@
 
 #include <iostream>
 #include <set>
-//#include "Objeto.h" 
+#include "Utils.h"
+
 using namespace std;
 class Objeto; 
 //Referencia circular de objeto, se puede cambiar por una referencia circular en Objeto.h
@@ -25,7 +26,6 @@ class Child{
         string direccion;
         string telefono;
         Prestados *prestado;
-        //Declarar e implementar estructura para almacenar Objetos prestados, capaz una lista enlazada porque es divertida (¿?)
     public:
         Child(string, int, string, string);
         ~Child();
