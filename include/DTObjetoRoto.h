@@ -13,8 +13,8 @@ class DTObjetoRoto{
         bool prestado;
         string nombreChild;
     public:
-        DTObjetoRoto(string, bool, string = '\0');
         ~DTObjetoRoto();
+        DTObjetoRoto(string, bool, string = '\0');
 
     friend std::ostream& operator<<(std::ostream& os, const DTObjetoRoto& o);
 };

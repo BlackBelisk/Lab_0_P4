@@ -15,18 +15,7 @@ public:
     //tal vez hay que modificar la linea anterior debido al constructor de Objeto.
     string toString();
 };
-string estadoToString(estado c) //funcion para que el enum se pase a string. necesario para funcion toString().
-{
-    switch (c)
-    {
-    case Nuevo:
-        return "Nuevo";
-    case BienConservado:
-        return "BienConservado";
-    case Roto:
-        return "Roto";
-    }
-}
+
 string Libro::toString()
 { // Libro: Nombre, AñoComprado, Estado, Autor, CantPaginas
 
