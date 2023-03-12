@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <iostream>
-#include <string.h>
+#include <string>
 #include "../include/Objeto.h"
 #include "../include/DTObjetoRoto.h"
 using namespace std;

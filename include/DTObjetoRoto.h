@@ -2,6 +2,7 @@
 #define _DT_OBJETO_ROTO
 
 #include <iostream>
+#include <string>
 #include "Utils.h"
 #include "Objeto.h"
 
@@ -14,7 +15,7 @@ class DTObjetoRoto{
         string nombreChild;
     public:
         ~DTObjetoRoto();
-        DTObjetoRoto(string, bool, string = '\0');
+        DTObjetoRoto(string, bool, string = "");
 
     friend std::ostream& operator<<(std::ostream& os, const DTObjetoRoto& o);
 };

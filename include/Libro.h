@@ -12,7 +12,7 @@ class Libro : public Objeto{
         string autor;
         int cantPaginas;
     public:
-        Libro(string, int, estado, string, int);
+        Libro(string nombre, int anioComprado, estado status, string autor1, int cantpag) : Objeto(nombre, anioComprado, status), autor(autor1), cantPaginas(cantpag){}
         ~Libro();
         virtual string toString();
 

@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <iostream>
-#include <string.h>
+#include <string>
 #include "../include/JuegoMesa.h"
 #include "../include/Objeto.h"
 

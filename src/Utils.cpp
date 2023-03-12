@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <iostream>
-#include <string.h>
+#include <string>
 #include "../include/Utils.h"
 
 using namespace std;
@@ -11,12 +11,12 @@ string estadoToString(estado c) //funcion para que el enum se pase a string. nec
     {
     case Nuevo:
         return "Nuevo";
-        break;
+        // break;
     case BienConservado:
         return "BienConservado";
-        break;
+        // break;
     case Roto:
         return "Roto";
-        break;
+        // break;
     }
 }

@@ -2,7 +2,7 @@
 #define _CLASSOBJETO_H_
 
 #include <stdio.h>
-#include <string.h>
+#include <string>
 #include <iostream>
 #include "Utils.h"
 #include "Child.h"
@@ -17,7 +17,8 @@ class Objeto{
         estado status;
         Child* prestado;
         Objeto(string, int, estado);
-    public:
+    public: 
+
         virtual string toString() = 0;
 };
 
