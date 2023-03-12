@@ -11,9 +11,12 @@ string estadoToString(estado c) //funcion para que el enum se pase a string. nec
     {
     case Nuevo:
         return "Nuevo";
+        break;
     case BienConservado:
         return "BienConservado";
+        break;
     case Roto:
         return "Roto";
+        break;
     }
 }
