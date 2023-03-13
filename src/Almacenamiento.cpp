@@ -3,18 +3,29 @@
 #include <iostream>
 #include <vector>
 
-#include "Objeto.h"
-#include "Libro.h"
-#include "JuegoMesa.h"
-#include "DTObjetoRoto.h"
-#include "Utils.h"
+#include "../include/Objeto.h"
+#include "../include/Libro.h"
+#include "../include/JuegoMesa.h"
+#include "../include/DTObjetoRoto.h"
+#include "../include/Utils.h"
 
 using namespace std;
 
 namespace vectorObjeto{
     vector<Objeto*> Objetos;
-    void crearLibro(string, int, estado, string, int);
-    void crearJuegoMesa(string, int, estado, int, int);
+
+    void crearLibro(string nombreLibro, int anio, estado status, string autor, int cantPag){
+        Objetos.push_back(new Libro(nombreLibro, anio, status, autor,cantPag));
+    };
+
+    void crearJuegoMesa(string nombreJuego, int anio, estado status, int edad, int cantJug){
+        Objetos.push_back(new JuegoMesa(nombreJuego, anio, status, edad, cantJug));
+    }
+
+    void agregarObjeto(Objeto* c){
+        Objetos.push_back(c);
+    }
+
     void eliminarObjeto();
 }
 
