@@ -31,7 +31,15 @@ namespace vectorObjeto{
 
 namespace vectorChild{
     vector<Child*> Personas;
-    void agregarPersona(string, int, string, string);
+
+    void crearPersona(string nombre, int edad, string direccion, string telefono){
+        Personas.push_back(new Child(nombre, edad, direccion, telefono));
+    }
+
+    void agregarPersona(Child* c){
+        Personas.push_back(c);
+    }
+
     void eliminarPersona();
 }
 

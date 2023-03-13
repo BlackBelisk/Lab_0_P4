@@ -27,7 +27,8 @@ namespace vectorObjeto{
 
 namespace vectorChild{
    extern vector<Child*> Personas;
-    void agregarPersona(string, int, string, string);
+    void crearPersona(string, int, string, string);
+    void agregarPersona(Child*);
     void eliminarPersona();
 }
 
