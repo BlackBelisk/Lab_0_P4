@@ -8,10 +8,11 @@
 #include "include/Objeto.h"
 #include "include/Utils.h"
 using namespace std;
-
 int main(){
 
     Child Maria("María Laura", 10, "Nueva Palmira 1521", "099298190");
     Child Alex("Alex", 5, "Humberto Primo 1501", "29094141");
+    Libro libro1("Las Malas", 2022, Nuevo, "Camila Sosa Villada", 240); 
+    JuegoMesa juego1("Juego Uno", 2022, Roto, 7, 10);
     return 0;
 };

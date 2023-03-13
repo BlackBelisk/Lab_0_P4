@@ -17,9 +17,11 @@ class Objeto{
         estado status;
         Child* prestado;
         Objeto(string, int, estado);
+        ~Objeto();
     public: 
-
         virtual string toString() = 0;
+        virtual void prestarAChild(Child*);
+        virtual void devuelveChild();
 };
 
 #endif

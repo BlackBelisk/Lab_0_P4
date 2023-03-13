@@ -8,4 +8,5 @@ using namespace std;
 
 enum estado {Nuevo = 0, BienConservado, Roto};
 string estadoToString(estado c);
+
 #endif

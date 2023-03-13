@@ -16,6 +16,11 @@ class DTObjetoRoto{
     public:
         ~DTObjetoRoto();
         DTObjetoRoto(string, bool, string = "");
+        string getNombreRoto();
+        bool estaPrestadoRoto();
+        string getNombreChild();
+        bool operator==(const DTObjetoRoto &obj);
+        bool operator!=(const DTObjetoRoto &obj);
 
     friend std::ostream& operator<<(std::ostream& os, const DTObjetoRoto& o);
 };
