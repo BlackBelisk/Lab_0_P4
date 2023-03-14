@@ -22,10 +22,10 @@ class Objeto{
         virtual void prestarAChild(Child*);
         virtual void devuelveChild();
         ~Objeto();
-        string getNombre();
-        int getAnio();
-        estado getEstado();
-        Child* getPrestado();
+        virtual string getNombre();
+        virtual int getAnio();
+        virtual estado getEstado();
+        virtual Child* getPrestado();
 };
 
 #endif
