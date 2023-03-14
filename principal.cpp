@@ -33,8 +33,20 @@ int main(){
     Child *alex = new Child("Alex", 5, "Humberto Primo 1501", "29094141");
     
     /*parte e*/
+    maria->nuevoPrestamo(juego2);
+    maria->nuevoPrestamo(libro1);
+    maria->nuevoPrestamo(juego3);
+    alex->nuevoPrestamo(juego1);
+    alex->nuevoPrestamo(libro3);
+        
+    /*parte f*/
     cout << maria->listarObjetosPrestados();
     cout << alex->listarObjetosPrestados();
+    
+    /*parte g*/ //  CONSULTAR OBJETOS ROTOS
+    
+    /*parte h*/  //ELIMINAR OBJETO 
+    
     
     return 0;
 };
