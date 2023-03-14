@@ -20,15 +20,15 @@ int main(){
     JuegoMesa *juego2 = new JuegoMesa("Mazo de Cartas", 2019, Nuevo, 7, 4);
     JuegoMesa *juego3 = new JuegoMesa("Dados", 2020, Roto, 2, 6);
     
-    /*parte c*/  //Consulta Objetos Creados
-    cout << "Libros: " << "/n";
-    cout << libro1->tostring() << "/n";
-    cout << libro2->tostring() << "/n";
-    cout << libro3->tostring() << "/n";
-    cout << "/n" << "Juegos: " << "/n";
-    cout << juego1->tostring() << "/n";
-    cout << juego2->tostring() << "/n";
-    cout << juego3->tostring() << "/n";
+    /*parte c*/ //Consulta Objetos Creados
+    cout << "Libros: " <<endl;
+    cout << libro1->toString();
+    cout << libro2->toString();
+    cout << libro3->toString();
+    cout << endl << "Juegos: " <<endl;
+    cout << juego1->toString();
+    cout << juego2->toString();
+    cout << juego3->toString();
     
     /*parte d*/  //Crea Ninos
     Child *maria = new Child("María Laura", 10, "Nueva Palmira 1521", "099298190");
@@ -43,11 +43,13 @@ int main(){
         
     
     /*parte f*/  //Listar Objetos Prestados de cada nino
-    for(i=0; i < maria->listarObjetosPrestados.size(); i++){
-        cout << "Objetos prestados de Maria: " << "/n" << maria->listarObjetosPrestados[i] << "/n";
+    cout << "Objetos prestados de Maria:"<<endl;
+    for(auto it = maria->listarObjetosPrestados().begin() ; it != maria->listarObjetosPrestados().end(); ++it){
+         cout << *it <<endl;
     }
-    for(i=0; i < alex->listarObjetosPrestados.size(); i++){
-        cout << "Objetos prestados de Alex: " << "/n" << alex->listarObjetosPrestados[i] << "/n";
+    cout << "Objetos prestados de Alex:" <<endl;
+    for(auto it = alex->listarObjetosPrestados().begin() ; it != alex->listarObjetosPrestados().end(); ++it){
+        cout << *it << endl;
     }
     
     
@@ -60,13 +62,13 @@ int main(){
     rotos[4] = juego2;
     rotos[5] = juego3;
     
-    for(i=0; i<6; i++){
+    for(int i=0; i<6; i++){
         if (rotos[i]->status == Roto){
             if (rotos[i]->prestado == NULL){                   //Si no esta prestado solo se crea el DTObjetoRoto con el nombre del Objeto
                 DTObjetoRoto (rotos[i]->toString());
             }
             else{                                              //Si esta prestado se crea el DTObjetoRoto con el nombre del Objeto, true y nombre del nino
-                DTObjetoRoto (rotos[i]->toString(), true, rotos[i]->prestarAChild);
+                DTObjetoRoto (rotos[i]->toString(), true, rotos[i]->prestarAChild());
             }
         }
     }
