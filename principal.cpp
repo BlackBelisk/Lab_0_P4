@@ -21,12 +21,12 @@ int main(){
     JuegoMesa *juego3 = new JuegoMesa("Dados", 2020, Roto, 2, 6);
     
     /*parte c*/
-    cout << libro1->tostring();
-    cout << libro2->tostring();
-    cout << libro3->tostring();
-    cout << juego1->tostring();
-    cout << juego2->tostring();
-    cout << juego3->tostring();
+    cout << libro1->toString();
+    cout << libro2->toString();
+    cout << libro3->toString();
+    cout << juego1->toString();
+    cout << juego2->toString();
+    cout << juego3->toString();
     
     /*parte d*/
     Child *maria = new Child("María Laura", 10, "Nueva Palmira 1521", "099298190");

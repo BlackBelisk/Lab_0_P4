@@ -11,6 +11,6 @@ string Libro::toString()
     string anioComp = to_string(anioComprado);
     string cantPag = to_string(cantPaginas);
 
-    return "Libro: " nombre + ", " + anioComp + ", " + estadoToString(status) + ", " + autor + ", " + cantPag;
+    return "Libro: " + nombre + ", " + anioComp + ", " + estadoToString(status) + ", " + autor + ", " + cantPag;
    
 }
