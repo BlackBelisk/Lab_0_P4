@@ -44,6 +44,25 @@ int main(){
     cout << alex->listarObjetosPrestados();
     
     /*parte g*/ //  CONSULTAR OBJETOS ROTOS
+    Objeto *rotos[6] = new Objeto;
+    rotos[0] = libro1;
+    rotos[1] = libro2;
+    rotos[2] = libro3;
+    rotos[3] = juego1;
+    rotos[4] = juego2;
+    rotos[5] = juego3;
+    
+    for(i=0; i<6; i++){
+        if (rotos[i]->status == Roto){
+            if (rotos[i]->prestado == NULL){                   //Si no esta prestado solo se crea el DTObjetoRoto con el nombre del Objeto
+                DTObjetoRoto (rotos[i]->toString());
+            }
+            else{                                              //Si esta prestado se crea el DTObjetoRoto con el nombre del Objeto, true y nombre del nino
+                DTObjetoRoto (rotos[i]->toString(), true, rotos[i]->prestarAChild);
+            }
+        }
+    }
+    
     
     /*parte h*/  //ELIMINAR OBJETO 
     
