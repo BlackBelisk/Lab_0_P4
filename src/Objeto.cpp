@@ -21,3 +21,19 @@ void Objeto::devuelveChild(){
     this->prestado->eliminarPrestamo(this);
     this->prestado = nullptr;
 }
+
+string Objeto::getNombre(){
+    return nombre;
+}
+
+int Objeto::getAnio(){
+    return anioComprado;
+}
+
+estado Objeto::getEstado(){
+    return status;
+}
+
+Child* Objeto::getPrestado(){
+    return prestado;
+}
