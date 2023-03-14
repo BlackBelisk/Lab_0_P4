@@ -10,29 +10,31 @@
 using namespace std;
 int main(){
 
-    /*parte a*/  
+    /*parte a*/  //Ingresa Libros
     Libro *libro1 = new Libro("Nacidos de la bruma: El imperio final", 2022, Roto, "Brandon Sanderson", 688);
     Libro *libro2 = new Libro("Las Malas", 2022, Nuevo, "Camila Sosa Villada", 240);
     Libro *libro3 = new Libro("El cocodrilo al que no le gustaba el agua", 2016, Roto, "Gemma Merino", 32);
     
-    /*parte b*/
+    /*parte b*/  //Ingresa Juegos
     JuegoMesa *juego1 = new JuegoMesa("Juego Uno", 2022, Roto, 7, 10);
     JuegoMesa *juego2 = new JuegoMesa("Mazo de Cartas", 2019, Nuevo, 7, 4);
     JuegoMesa *juego3 = new JuegoMesa("Dados", 2020, Roto, 2, 6);
     
-    /*parte c*/
-    cout << libro1->tostring();
-    cout << libro2->tostring();
-    cout << libro3->tostring();
-    cout << juego1->tostring();
-    cout << juego2->tostring();
-    cout << juego3->tostring();
+    /*parte c*/  //Consulta Objetos Creados
+    cout << "Libros: " << "/n";
+    cout << libro1->tostring() << "/n";
+    cout << libro2->tostring() << "/n";
+    cout << libro3->tostring() << "/n";
+    cout << "/n" << "Juegos: " << "/n";
+    cout << juego1->tostring() << "/n";
+    cout << juego2->tostring() << "/n";
+    cout << juego3->tostring() << "/n";
     
-    /*parte d*/
+    /*parte d*/  //Crea Ninos
     Child *maria = new Child("María Laura", 10, "Nueva Palmira 1521", "099298190");
     Child *alex = new Child("Alex", 5, "Humberto Primo 1501", "29094141");
     
-    /*parte e*/
+    /*parte e*/  //Prestamos
     maria->nuevoPrestamo(juego2);
     maria->nuevoPrestamo(libro1);
     maria->nuevoPrestamo(juego3);
