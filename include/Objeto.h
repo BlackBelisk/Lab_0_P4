@@ -21,7 +21,11 @@ class Objeto{
         virtual string toString() = 0;
         virtual void prestarAChild(Child*);
         virtual void devuelveChild();
-         ~Objeto();
+        ~Objeto();
+        string getNombre();
+        int getAnio();
+        estado getEstado();
+        Child* getPrestado();
 };
 
 #endif

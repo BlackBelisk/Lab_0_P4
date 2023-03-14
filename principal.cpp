@@ -10,38 +10,46 @@
 using namespace std;
 int main(){
 
-    /*parte a*/  
+    /*parte a*/  //Ingresa Libros
     Libro *libro1 = new Libro("Nacidos de la bruma: El imperio final", 2022, Roto, "Brandon Sanderson", 688);
     Libro *libro2 = new Libro("Las Malas", 2022, Nuevo, "Camila Sosa Villada", 240);
     Libro *libro3 = new Libro("El cocodrilo al que no le gustaba el agua", 2016, Roto, "Gemma Merino", 32);
     
-    /*parte b*/
+    /*parte b*/  //Ingresa Juegos
     JuegoMesa *juego1 = new JuegoMesa("Juego Uno", 2022, Roto, 7, 10);
     JuegoMesa *juego2 = new JuegoMesa("Mazo de Cartas", 2019, Nuevo, 7, 4);
     JuegoMesa *juego3 = new JuegoMesa("Dados", 2020, Roto, 2, 6);
     
     /*parte c*/
-    cout << libro1->toString();
-    cout << libro2->toString();
-    cout << libro3->toString();
-    cout << juego1->toString();
-    cout << juego2->toString();
-    cout << juego3->toString();
+    cout << libro1->tostring();
+    cout << libro2->tostring();
+    cout << libro3->tostring();
+    cout << juego1->tostring();
+    cout << juego2->tostring();
+    cout << juego3->tostring();
     
-    /*parte d*/
+    /*parte d*/  //Crea Ninos
     Child *maria = new Child("María Laura", 10, "Nueva Palmira 1521", "099298190");
     Child *alex = new Child("Alex", 5, "Humberto Primo 1501", "29094141");
     
-    /*parte e*/
+    /*parte e*/  //Prestamos
     maria->nuevoPrestamo(juego2);
     maria->nuevoPrestamo(libro1);
     maria->nuevoPrestamo(juego3);
     alex->nuevoPrestamo(juego1);
     alex->nuevoPrestamo(libro3);
         
-    /*parte f*/
-    cout << maria->listarObjetosPrestados();
-    cout << alex->listarObjetosPrestados();
+    
+    /*parte f*/  //Listar Objetos Prestados de cada nino
+    cout << "Objetos prestados de Maria:"<<endl;
+    for(auto it = maria->listarObjetosPrestados().begin() ; it != maria->listarObjetosPrestados().end(); ++it){
+         cout << *it <<endl;
+    }
+    cout << "Objetos prestados de Alex:" <<endl;
+    for(auto it = alex->listarObjetosPrestados().begin() ; it != alex->listarObjetosPrestados().end(); ++it){
+        cout << *it << endl;
+    }
+    
     
     /*parte g*/ //  CONSULTAR OBJETOS ROTOS
     Objeto *rotos[6] = new Objeto;
@@ -52,13 +60,13 @@ int main(){
     rotos[4] = juego2;
     rotos[5] = juego3;
     
-    for(i=0; i<6; i++){
+    for(int i=0; i<6; i++){
         if (rotos[i]->status == Roto){
             if (rotos[i]->prestado == NULL){                   //Si no esta prestado solo se crea el DTObjetoRoto con el nombre del Objeto
                 DTObjetoRoto (rotos[i]->toString());
             }
             else{                                              //Si esta prestado se crea el DTObjetoRoto con el nombre del Objeto, true y nombre del nino
-                DTObjetoRoto (rotos[i]->toString(), true, rotos[i]->prestarAChild);
+                DTObjetoRoto (rotos[i]->toString(), true, rotos[i]->prestarAChild());
             }
         }
     }
