@@ -39,9 +39,15 @@ int main(){
     alex->nuevoPrestamo(juego1);
     alex->nuevoPrestamo(libro3);
         
-    /*parte f*/
-    cout << maria->listarObjetosPrestados();
-    cout << alex->listarObjetosPrestados();
+    
+    /*parte f*/  //Listar Objetos Prestados de cada nino
+    for(i=0; i < maria->listarObjetosPrestados.size(); i++){
+        cout << "Objetos prestados de Maria: " << "/n" << maria->listarObjetosPrestados[i] << "/n";
+    }
+    for(i=0; i < alex->listarObjetosPrestados.size(); i++){
+        cout << "Objetos prestados de Alex: " << "/n" << alex->listarObjetosPrestados[i] << "/n";
+    }
+    
     
     /*parte g*/ //  CONSULTAR OBJETOS ROTOS
     Objeto *rotos[6] = new Objeto;
