@@ -80,5 +80,6 @@ int main(){
     
     delete libro1, libro2, libro3, juego1, juego2, juego3;
     delete alex, maria;
+    cin.get();
     return 0;
 };

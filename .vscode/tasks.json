@@ -9,6 +9,7 @@
                 "-g",
                 "${workspaceFolder}/src/*.cpp",
                 "${workspaceFolder}/include/*.h",
+                "${workspaceFolder}/principal.cpp",
                 "-o",
                 "${workspaceFolder}/bin/programa"
             ],
