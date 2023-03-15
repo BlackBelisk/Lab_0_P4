@@ -7,6 +7,7 @@ Objeto::Objeto(string name, int anio, estado status1){
     this->nombre = name;
     this->anioComprado = anio;
     this->status = status1;
+    this->prestado = nullptr;
 }
 
 Objeto::~Objeto(){

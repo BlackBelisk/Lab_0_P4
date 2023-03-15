@@ -10,6 +10,13 @@ DTObjetoRoto::DTObjetoRoto(string nObjeto, bool r, string nChild){
     this->prestado = r;
     this->nombreChild = nChild;
     }
+
+DTObjetoRoto::DTObjetoRoto(Objeto& c){
+    this->nombreObjeto = c.getNombre();
+    this->prestado = c.getEstado();
+    this->nombreChild = c.getPrestado()->getChild();
+}
+
 string DTObjetoRoto::getNombreRoto(){
     return this->nombreObjeto;
 };

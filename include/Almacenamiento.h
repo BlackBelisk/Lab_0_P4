@@ -18,14 +18,16 @@ using namespace std;
 //Dios se apiade de nosotros
 
 namespace vectorObjeto{
+    //Vector de almacenamiento para Objetos
     extern vector<Objeto*> Objetos;
     void crearLibro(string, int, estado, string, int);
     void crearJuegoMesa(string, int, estado, int, int);
     void agregarObjeto(Objeto*);
-    void eliminarObjeto();
+    void eliminarObjeto(Objeto*);
 }
 
 namespace vectorChild{
+    //Vector de almacenamiento para personas
    extern vector<Child*> Personas;
     void crearPersona(string, int, string, string);
     void agregarPersona(Child*);
@@ -33,6 +35,7 @@ namespace vectorChild{
 }
 
 namespace vectorObjetoRoto{
+    //Vector de almacenamiento de ObjetosRotos
     extern vector<DTObjetoRoto> ObjetosRotos;
     void agregarRoto();
 }

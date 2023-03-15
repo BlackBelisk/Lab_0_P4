@@ -2,10 +2,13 @@
 #include <iostream>
 #include <string>
 #include "../include/Utils.h"
+#include "../include/Child.h"
+#include "../include/Objeto.h"
 
 using namespace std;
 
-string estadoToString(estado c) //funcion para que el enum se pase a string. necesario para funcion toString().
+
+string estadoToString(estado c) 
 {
     switch (c)
     {
@@ -19,4 +22,9 @@ string estadoToString(estado c) //funcion para que el enum se pase a string. nec
         return "Roto";
         // break;
     }
+}
+
+void hacerPrestamo(Child* c, Objeto* o){
+    c->nuevoPrestamo(o);
+    o->prestarAChild(c);
 }
