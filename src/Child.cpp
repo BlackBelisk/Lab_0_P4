@@ -33,7 +33,12 @@ Child::Child (string nom, int ed, string dir, string tel){
 }
 
 Child::~Child(){
-    
+    while(prestado != nullptr){
+        Prestados *borrar = prestado;
+        prestado = prestado->sig;
+        delete borrar->obj;
+        delete borrar;
+    }
 }
 
 Child::Child(string nom, int ed, string dir, string tel, Objeto* obj){
