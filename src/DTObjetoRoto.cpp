@@ -34,7 +34,7 @@ bool DTObjetoRoto::operator==(const DTObjetoRoto &obj){
 };
 
 bool DTObjetoRoto::operator!=(const DTObjetoRoto &obj){
-    return (this->nombreObjeto != obj.nombreObjeto && this->prestado != obj.prestado && this->nombreChild != obj.nombreChild);
+    return (this->nombreObjeto != obj.nombreObjeto || this->prestado != obj.prestado || this->nombreChild != obj.nombreChild);
 };
 
 std::ostream& operator<<(std::ostream& os, const DTObjetoRoto& o) {

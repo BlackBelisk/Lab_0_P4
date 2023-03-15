@@ -59,22 +59,22 @@ namespace vectorChild{
 }
 
 namespace vectorObjetoRoto{
-    vector<DTObjetoRoto> ObjetosRotos;
+    vector<DTObjetoRoto> ObjRotos;
 
     void agregarRoto(DTObjetoRoto obj){
-        ObjetosRotos.push_back(obj);
+        ObjRotos.push_back(obj);
     };
 
     void eliminarRoto(DTObjetoRoto obj){
         int aux = 0;
-        while (aux < ObjetosRotos.size() && ObjetosRotos[aux] != obj)
+        while (aux < ObjRotos.size() && ObjRotos[aux] != obj)
         {
             aux++;
         }
-        if (aux < ObjetosRotos.size()+1)
+        if (aux < ObjRotos.size())
         {
-           ObjetosRotos.erase(ObjetosRotos.begin() + aux);
+           ObjRotos.erase(ObjRotos.begin() + aux);
         }
-        
+
     }
 }

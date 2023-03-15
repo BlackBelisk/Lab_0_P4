@@ -5,7 +5,6 @@
 #include "../include/Almacenamiento.h"
 
 using namespace std;
-
 Objeto::Objeto(string name, int anio, estado status1){
     this->nombre = name;
     this->anioComprado = anio;
@@ -15,10 +14,12 @@ Objeto::Objeto(string name, int anio, estado status1){
 
 Objeto::~Objeto(){
     if (owner != nullptr){
+        if (status == Roto){
+            vectorObjetoRoto::eliminarRoto(DTObjetoRoto(this));
+        }
         this->owner->eliminarPrestamo(this);
-    }
-    if (status == Roto){
-        vectorObjetoRoto::eliminarRoto(DTObjetoRoto(this));
+    }else if (status == Roto){
+        vectorObjetoRoto::eliminarRoto(DTObjetoRoto(this->getNombre(), false));
     }
 }
 

@@ -8,8 +8,10 @@
 #include "include/Libro.h"
 #include "include/Objeto.h"
 #include "include/Utils.h"
+#include "include/Almacenamiento.h"
 
 using namespace std;
+using namespace vectorObjetoRoto;
 int main(){
 
     /*parte a*/  //Ingresa Libros
@@ -60,7 +62,6 @@ int main(){
     }
     
     /*parte g*/ //  CONSULTAR OBJETOS ROTOS
-    vector<DTObjetoRoto> ObjRotos;
     Objeto *rotos[6];
     rotos[0] = libro1;
     rotos[1] = libro2;
@@ -68,27 +69,31 @@ int main(){
     rotos[3] = juego1;
     rotos[4] = juego2;
     rotos[5] = juego3;
-    
+    cout << endl;
     for(int i=0; i<6; i++){
         if (rotos[i]->getEstado() == Roto){
             if (rotos[i]->getPrestado() == NULL){                   //Si no esta prestado solo se crea el DTObjetoRoto con el nombre del Objeto
                 DTObjetoRoto r(rotos[i]->getNombre(), false);
-                ObjRotos.push_back(r);
+                agregarRoto(r);
             }
             else{                                              //Si esta prestado se crea el DTObjetoRoto con el nombre del Objeto, true y nombre del nino
                 DTObjetoRoto r(rotos[i]->getNombre(), true, rotos[i]->getPrestado()->getChild());
-                ObjRotos.push_back(r);
+                agregarRoto(r);
             }
         }
     }
-    
-    
+    for(auto it = ObjRotos.begin() ; it != ObjRotos.end(); it++){
+        cout << *it << endl;
+    }
+    for (int i = 0; i < 6; i++)
+        rotos[i] = nullptr;
     /*parte h*/  //ELIMINAR OBJETO 
+    delete maria;
     delete libro1;
-    cout << alex->getChild();
-    delete libro1, libro2, libro3, juego1, juego2, juego3;
-    cout << alex->getChild();
-    delete alex, maria;
-    cin.get();
+    delete libro2;
+    delete juego1;
+    delete juego2;
+    delete juego3;
+    delete alex;
     return 0;
 };

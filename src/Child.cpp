@@ -1,4 +1,6 @@
 #include "../include/Child.h"
+#include "../include/DTObjetoRoto.h"
+#include "../include/Almacenamiento.h"
 #include <stdio.h>
 #include <iostream>
 #include <set>
@@ -36,8 +38,12 @@ Child::Child (string nom, int ed, string dir, string tel){
 Child::~Child(){
     while(prestado != nullptr){
         Prestados *borrar = prestado;
+        if (prestado->obj->getEstado() == Roto){
+            vectorObjetoRoto::eliminarRoto(DTObjetoRoto (prestado->obj));
+            vectorObjetoRoto::agregarRoto(DTObjetoRoto(prestado->obj->getNombre(), false));
+        }
+        prestado->obj->devuelveChild();
         prestado = prestado->sig;
-        delete borrar->obj;
         delete borrar;
     }
 }
@@ -68,18 +74,14 @@ void Child::eliminarPrestamo(Objeto *o){
     if (prestado != nullptr){
     Prestados *aux = prestado;
     if(prestado->obj == o){
-        delete prestado->obj;
         prestado = prestado->sig;
         delete aux;
     }else{
-        cout << aux->obj->getNombre()<<endl;
-        cout << o->getNombre();
         while(aux->sig->obj != o){
             aux = aux->sig;
         }
         Prestados *borrar = aux->sig;
         aux->sig = aux->sig->sig;
-        delete borrar->obj;
         delete borrar;
     }
     }
