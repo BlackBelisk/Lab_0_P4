@@ -52,7 +52,6 @@ int main(){
         cout << *it << endl;
     }
     
-    
     /*parte g*/ //  CONSULTAR OBJETOS ROTOS
     vector<DTObjetoRoto> ObjRotos;
     Objeto *rotos[6];
