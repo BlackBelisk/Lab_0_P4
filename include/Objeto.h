@@ -13,6 +13,7 @@ class Child;
 enum estado {Nuevo = 0, BienConservado, Roto};
 //Convierte un enum estado a String
 string estadoToString(estado c);
+
 //Clase Virtual Objeto.
 class Objeto{
     protected:
