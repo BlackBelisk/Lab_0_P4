@@ -66,7 +66,7 @@ namespace vectorObjetoRoto{
     };
 
     void eliminarRoto(DTObjetoRoto obj){
-        int aux;
+        int aux = 0;
         while (aux < ObjetosRotos.size() && ObjetosRotos[aux] != obj)
         {
             aux++;

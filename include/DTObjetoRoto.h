@@ -15,6 +15,7 @@ class DTObjetoRoto{
         string nombreChild;
     public:
         ~DTObjetoRoto();
+        DTObjetoRoto() = default;
         DTObjetoRoto(string, bool, string = "");
         DTObjetoRoto(Objeto*);
         string getNombreRoto();
