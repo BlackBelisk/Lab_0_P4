@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string>
 #include <iostream>
+#include <vector>
 #include "include/Child.h"
 #include "include/DTObjetoRoto.h"
 #include "include/JuegoMesa.h"
@@ -52,7 +53,7 @@ int main(){
     
     
     /*parte g*/ //  CONSULTAR OBJETOS ROTOS
-    set<DTObjetoRoto> ObjRotos;
+    vector<DTObjetoRoto> ObjRotos;
     Objeto *rotos[6];
     rotos[0] = libro1;
     rotos[1] = libro2;
@@ -65,11 +66,11 @@ int main(){
         if (rotos[i]->getEstado() == Roto){
             if (rotos[i]->getPrestado() == NULL){                   //Si no esta prestado solo se crea el DTObjetoRoto con el nombre del Objeto
                 DTObjetoRoto r(rotos[i]->getNombre(), false);
-                ObjRotos.insert(r);
+                ObjRotos.push_back(r);
             }
             else{                                              //Si esta prestado se crea el DTObjetoRoto con el nombre del Objeto, true y nombre del nino
                 DTObjetoRoto r(rotos[i]->getNombre(), true, rotos[i]->getPrestado()->getChild());
-                ObjRotos.insert(r);
+                ObjRotos.push_back(r);
             }
         }
     }
