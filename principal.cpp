@@ -35,20 +35,27 @@ int main(){
     Child *alex = new Child("Alex", 5, "Humberto Primo 1501", "29094141");
     
     /*parte e*/  //Prestamos
-    maria->nuevoPrestamo(juego2);
+    hacerPrestamo(maria, juego2);
+    hacerPrestamo(maria, libro1);
+    hacerPrestamo(maria, juego3);
+    hacerPrestamo(alex, juego1);
+    hacerPrestamo(alex, libro3);
+    /*maria->nuevoPrestamo(juego2);
     maria->nuevoPrestamo(libro1);
     maria->nuevoPrestamo(juego3);
     alex->nuevoPrestamo(juego1);
     alex->nuevoPrestamo(libro3);
-        
+    */
     
     /*parte f*/  //Listar Objetos Prestados de cada nino
     cout << "Objetos prestados de Maria:"<<endl;
-    for(auto it = maria->listarObjetosPrestados().begin() ; it != maria->listarObjetosPrestados().end(); ++it){
+    set <string> m = maria->listarObjetosPrestados();
+    for(auto it = m.begin() ; it != m.end(); it++){
          cout << *it <<endl;
     }
     cout << "Objetos prestados de Alex:" <<endl;
-    for(auto it = alex->listarObjetosPrestados().begin() ; it != alex->listarObjetosPrestados().end(); ++it){
+    set <string> a = alex->listarObjetosPrestados();
+    for(auto it = a.begin() ; it != a.end(); it++){
         cout << *it << endl;
     }
     
@@ -77,8 +84,10 @@ int main(){
     
     
     /*parte h*/  //ELIMINAR OBJETO 
-    
+    delete libro1;
+    cout << alex->getChild();
     delete libro1, libro2, libro3, juego1, juego2, juego3;
+    cout << alex->getChild();
     delete alex, maria;
     cin.get();
     return 0;

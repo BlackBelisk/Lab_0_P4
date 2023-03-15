@@ -10,21 +10,25 @@ Objeto::Objeto(string name, int anio, estado status1){
     this->nombre = name;
     this->anioComprado = anio;
     this->status = status1;
-    this->prestado = nullptr;
+    this->owner = nullptr;
 }
 
 Objeto::~Objeto(){
-    this->prestado->eliminarPrestamo(this);
-    vectorObjetoRoto::eliminarRoto(DTObjetoRoto(this));
+    if (owner != nullptr){
+        this->owner->eliminarPrestamo(this);
+    }
+    if (status == Roto){
+        vectorObjetoRoto::eliminarRoto(DTObjetoRoto(this));
+    }
 }
 
 void Objeto::prestarAChild(Child* c){
-    this->prestado = c;
+    this->owner = c;
 }
 
 void Objeto::devuelveChild(){
-    this->prestado->eliminarPrestamo(this);
-    this->prestado = nullptr;
+    this->owner->eliminarPrestamo(this);
+    this->owner = nullptr;
 }
 
 string Objeto::getNombre(){
@@ -40,7 +44,7 @@ estado Objeto::getEstado(){
 }
 
 Child* Objeto::getPrestado(){
-    return prestado;
+    return owner;
 }
 
 string estadoToString(estado c) 
