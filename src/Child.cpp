@@ -62,6 +62,7 @@ set<string> Child:: listarObjetosPrestados(){
             aux = aux->sig;
         }while(aux->sig != nullptr);
     }
+    return prestamos;
 }
 
 void Child::eliminarPrestamo(Objeto *o){

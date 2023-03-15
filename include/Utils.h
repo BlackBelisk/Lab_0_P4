@@ -8,9 +8,6 @@
 #include "Objeto.h"
 using namespace std;
 
-//Convierte un enum estado a String
-string estadoToString(estado c);
-
 //Realiza un prestamo
 void hacerPrestamo(Child*, Objeto*);
 

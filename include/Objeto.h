@@ -11,6 +11,8 @@ using namespace std;
 class Child;
 //Tipo enum estado, indica el estado de un Objeto
 enum estado {Nuevo = 0, BienConservado, Roto};
+//Convierte un enum estado a String
+string estadoToString(estado c);
 //Clase Virtual Objeto.
 class Objeto{
     protected:

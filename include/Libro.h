@@ -13,7 +13,7 @@ class Libro : public Objeto{
         int cantPaginas;
     public:
         Libro(string nombre, int anioComprado, estado status, string autor1, int cantpag) : Objeto(nombre, anioComprado, status), autor(autor1), cantPaginas(cantpag){}
-        ~Libro();
+        //~Libro();
         virtual string toString();
 
 };

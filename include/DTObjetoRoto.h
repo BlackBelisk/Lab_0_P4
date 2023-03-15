@@ -14,7 +14,7 @@ class DTObjetoRoto{
         bool prestado;
         string nombreChild;
     public:
-        ~DTObjetoRoto();
+        ~DTObjetoRoto() = default;
         DTObjetoRoto() = default;
         DTObjetoRoto(string, bool, string = "");
         DTObjetoRoto(Objeto*);

@@ -31,7 +31,7 @@ namespace vectorChild{
    extern vector<Child*> Personas;
     void crearPersona(string, int, string, string);
     void agregarPersona(Child*);
-    void eliminarPersona();
+    void eliminarPersona(Child*);
 }
 
 namespace vectorObjetoRoto{

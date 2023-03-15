@@ -42,3 +42,20 @@ estado Objeto::getEstado(){
 Child* Objeto::getPrestado(){
     return prestado;
 }
+
+string estadoToString(estado c) 
+{
+    switch (c)
+    {
+    case Nuevo:
+        return "Nuevo";
+        break;
+    case BienConservado:
+        return "BienConservado";
+        break;
+    case Roto:
+        return "Roto";
+        break;
+    default: return "\0";
+    }
+}
