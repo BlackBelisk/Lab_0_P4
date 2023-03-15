@@ -27,7 +27,7 @@ void Objeto::prestarAChild(Child* c){
 }
 
 void Objeto::devuelveChild(){
-    this->owner->eliminarPrestamo(this);
+    //this->owner->eliminarPrestamo(this);
     this->owner = nullptr;
 }
 

@@ -11,3 +11,8 @@ void hacerPrestamo(Child* c, Objeto* o){
     c->nuevoPrestamo(o);
     o->prestarAChild(c);
 }
+
+void devolverPrestamo(Child* c, Objeto* o){
+    c->eliminarPrestamo(o);
+    o->devuelveChild();
+}

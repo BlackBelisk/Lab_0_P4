@@ -10,5 +10,5 @@ using namespace std;
 
 //Realiza un prestamo
 void hacerPrestamo(Child*, Objeto*);
-
+void devolverPrestamo(Child*, Objeto*);
 #endif
