@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
 #include "../include/Objeto.h"
+#include "../include/DTObjetoRoto.h"
+#include "../include/Almacenamiento.h"
+
 using namespace std;
 
 Objeto::Objeto(string name, int anio, estado status1){
@@ -12,6 +15,7 @@ Objeto::Objeto(string name, int anio, estado status1){
 
 Objeto::~Objeto(){
     this->prestado->eliminarPrestamo(this);
+    vectorObjetoRoto::eliminarRoto(DTObjetoRoto(this));
 }
 
 void Objeto::prestarAChild(Child* c){

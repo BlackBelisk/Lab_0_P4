@@ -37,7 +37,8 @@ namespace vectorChild{
 namespace vectorObjetoRoto{
     //Vector de almacenamiento de ObjetosRotos
     extern vector<DTObjetoRoto> ObjetosRotos;
-    void agregarRoto();
+    void agregarRoto(DTObjetoRoto);
+    void eliminarRoto(DTObjetoRoto);
 }
 
 

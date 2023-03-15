@@ -23,6 +23,7 @@ class Objeto{
         virtual string toString() = 0;
 
         virtual void prestarAChild(Child*);
+        //Función para anular prestamo
         virtual void devuelveChild();
        
        //Getters

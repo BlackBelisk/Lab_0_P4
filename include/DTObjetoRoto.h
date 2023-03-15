@@ -16,7 +16,7 @@ class DTObjetoRoto{
     public:
         ~DTObjetoRoto();
         DTObjetoRoto(string, bool, string = "");
-        DTObjetoRoto(Objeto&);
+        DTObjetoRoto(Objeto*);
         string getNombreRoto();
         bool estaPrestadoRoto();
         string getNombreChild();

@@ -60,8 +60,21 @@ namespace vectorChild{
 
 namespace vectorObjetoRoto{
     vector<DTObjetoRoto> ObjetosRotos;
-    
-    void agregarRoto(){
 
+    void agregarRoto(DTObjetoRoto obj){
+        ObjetosRotos.push_back(obj);
     };
+
+    void eliminarRoto(DTObjetoRoto obj){
+        int aux;
+        while (aux < ObjetosRotos.size() && ObjetosRotos[aux] != obj)
+        {
+            aux++;
+        }
+        if (aux < ObjetosRotos.size()+1)
+        {
+           ObjetosRotos.erase(ObjetosRotos.begin() + aux);
+        }
+        
+    }
 }
