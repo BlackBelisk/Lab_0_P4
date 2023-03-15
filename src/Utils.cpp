@@ -14,13 +14,13 @@ string estadoToString(estado c)
     {
     case Nuevo:
         return "Nuevo";
-        // break;
+        break;
     case BienConservado:
         return "BienConservado";
-        // break;
+        break;
     case Roto:
         return "Roto";
-        // break;
+        break;
     }
 }
 
