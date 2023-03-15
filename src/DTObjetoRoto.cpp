@@ -10,6 +10,13 @@ DTObjetoRoto::DTObjetoRoto(string nObjeto, bool r, string nChild){
     this->prestado = r;
     this->nombreChild = nChild;
     }
+
+DTObjetoRoto::DTObjetoRoto(Objeto* c){
+    this->nombreObjeto = c->getNombre();
+    this->prestado = c->getEstado();
+    this->nombreChild = c->getPrestado()->getChild();
+}
+
 string DTObjetoRoto::getNombreRoto(){
     return this->nombreObjeto;
 };
@@ -23,11 +30,11 @@ string DTObjetoRoto::getNombreChild(){
 }
 
 bool DTObjetoRoto::operator==(const DTObjetoRoto &obj){
-    return (this->nombreObjeto==obj.nombreObjeto);
+    return (this->nombreObjeto == obj.nombreObjeto && this->prestado == obj.prestado && this->nombreChild == obj.nombreChild);
 };
 
 bool DTObjetoRoto::operator!=(const DTObjetoRoto &obj){
-    return (this->nombreObjeto!=obj.nombreObjeto);
+    return (this->nombreObjeto!=obj.nombreObjeto && this->prestado != obj.prestado && this->nombreChild != obj.nombreChild);
 };
 
 std::ostream& operator<<(std::ostream& os, const DTObjetoRoto& o) {

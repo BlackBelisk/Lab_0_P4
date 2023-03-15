@@ -18,14 +18,19 @@ class Objeto{
         Child* prestado;
         Objeto(string, int, estado);
     public: 
-        virtual string toString() = 0;
-        virtual void prestarAChild(Child*);
-        virtual void devuelveChild();
         ~Objeto();
-        string getNombre();
-        int getAnio();
-        estado getEstado();
-        Child* getPrestado();
+
+        virtual string toString() = 0;
+
+        virtual void prestarAChild(Child*);
+        //Función para anular prestamo
+        virtual void devuelveChild();
+       
+       //Getters
+        virtual string getNombre();
+        virtual int getAnio();
+        virtual estado getEstado();
+        virtual Child* getPrestado();
 };
 
 #endif

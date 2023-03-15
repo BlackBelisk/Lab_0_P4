@@ -20,15 +20,13 @@ int main(){
     JuegoMesa *juego2 = new JuegoMesa("Mazo de Cartas", 2019, Nuevo, 7, 4);
     JuegoMesa *juego3 = new JuegoMesa("Dados", 2020, Roto, 2, 6);
     
-    /*parte c*/ //Consulta Objetos Creados
-    cout << "Libros: " <<endl;
-    cout << libro1->toString();
-    cout << libro2->toString();
-    cout << libro3->toString();
-    cout << endl << "Juegos: " <<endl;
-    cout << juego1->toString();
-    cout << juego2->toString();
-    cout << juego3->toString();
+    /*parte c*/
+    cout << libro1->toString() << endl;
+    cout << libro2->toString() << endl;
+    cout << libro3->toString() << endl;
+    cout << juego1->toString() << endl;
+    cout << juego2->toString() << endl;
+    cout << juego3->toString() << endl;
     
     /*parte d*/  //Crea Ninos
     Child *maria = new Child("María Laura", 10, "Nueva Palmira 1521", "099298190");

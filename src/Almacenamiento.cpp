@@ -2,6 +2,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 #include "../include/Objeto.h"
 #include "../include/Libro.h"
@@ -26,7 +27,14 @@ namespace vectorObjeto{
         Objetos.push_back(c);
     }
 
-    void eliminarObjeto();
+    void eliminarObjeto(Objeto* o){
+      auto iter = find(Objetos.begin(), Objetos.end(), o);
+      if (iter != Objetos.end())
+      {
+        Objetos.erase(iter);
+        delete o;
+      }
+    }
 }
 
 namespace vectorChild{
@@ -40,10 +48,33 @@ namespace vectorChild{
         Personas.push_back(c);
     }
 
-    void eliminarPersona();
+    void eliminarPersona(Child* c){
+      auto iter = find(Personas.begin(), Personas.end(), c);
+      if (iter != Personas.end())
+      {
+        Personas.erase(iter);
+        delete c;
+      }
+    }
 }
 
 namespace vectorObjetoRoto{
     vector<DTObjetoRoto> ObjetosRotos;
-    void agregarRoto();
+
+    void agregarRoto(DTObjetoRoto obj){
+        ObjetosRotos.push_back(obj);
+    };
+
+    void eliminarRoto(DTObjetoRoto obj){
+        int aux;
+        while (aux < ObjetosRotos.size() && ObjetosRotos[aux] != obj)
+        {
+            aux++;
+        }
+        if (aux < ObjetosRotos.size()+1)
+        {
+           ObjetosRotos.erase(ObjetosRotos.begin() + aux);
+        }
+        
+    }
 }
