@@ -5,10 +5,12 @@
 #include <string>
 #include <iostream>
 #include "Utils.h"
-#include "Child.h"
+
 
 using namespace std;
-
+class Child;
+//Tipo enum estado, indica el estado de un Objeto
+enum estado {Nuevo = 0, BienConservado, Roto};
 //Clase Virtual Objeto.
 class Objeto{
     protected:
@@ -32,5 +34,5 @@ class Objeto{
         virtual estado getEstado();
         virtual Child* getPrestado();
 };
-
+#include "Child.h"
 #endif
