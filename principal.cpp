@@ -52,7 +52,8 @@ int main(){
     
     
     /*parte g*/ //  CONSULTAR OBJETOS ROTOS
-    Objeto *rotos[6] = new Objeto;
+    set<DTObjetoRoto> ObjRotos;
+    Objeto *rotos[6];
     rotos[0] = libro1;
     rotos[1] = libro2;
     rotos[2] = libro3;
@@ -61,12 +62,14 @@ int main(){
     rotos[5] = juego3;
     
     for(int i=0; i<6; i++){
-        if (rotos[i]->status == Roto){
-            if (rotos[i]->prestado == NULL){                   //Si no esta prestado solo se crea el DTObjetoRoto con el nombre del Objeto
-                DTObjetoRoto (rotos[i]->toString());
+        if (rotos[i]->getEstado() == Roto){
+            if (rotos[i]->getPrestado() == NULL){                   //Si no esta prestado solo se crea el DTObjetoRoto con el nombre del Objeto
+                DTObjetoRoto r(rotos[i]->getNombre(), false);
+                ObjRotos.insert(r);
             }
             else{                                              //Si esta prestado se crea el DTObjetoRoto con el nombre del Objeto, true y nombre del nino
-                DTObjetoRoto (rotos[i]->toString(), true, rotos[i]->prestarAChild());
+                DTObjetoRoto r(rotos[i]->getNombre(), true, rotos[i]->getPrestado()->getChild());
+                ObjRotos.insert(r);
             }
         }
     }
