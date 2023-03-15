@@ -19,7 +19,7 @@ class Objeto{
         string nombre;
         int anioComprado;
         estado status;
-        Child* prestado;
+        Child* owner;
         Objeto(string, int, estado);
     public: 
         ~Objeto();

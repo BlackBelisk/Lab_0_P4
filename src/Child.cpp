@@ -22,7 +22,7 @@ Prestados* Prestados::añadirObj(Objeto *o){
 }
 
 string Prestados::getObj(){
-    return obj->toString();
+    return obj->getNombre();
 }
 
 Child::Child (string nom, int ed, string dir, string tel){
@@ -30,6 +30,7 @@ Child::Child (string nom, int ed, string dir, string tel){
     edad = ed;
     direccion = dir;
     telefono = tel;
+    prestado = nullptr;
 }
 
 Child::~Child(){
@@ -50,26 +51,29 @@ Child::Child(string nom, int ed, string dir, string tel, Objeto* obj){
 }
 
 void Child:: nuevoPrestamo(Objeto *o){
-    prestado->añadirObj(o);
+    prestado = prestado->añadirObj(o);
 }
 
 set<string> Child:: listarObjetosPrestados(){
     set<string> prestamos;
     Prestados *aux = prestado;
     while(aux != nullptr){
-        prestamos.insert(aux->obj->toString());
+        prestamos.insert(aux->obj->getNombre());
         aux = aux->sig;
     }
     return prestamos;
 }
 
 void Child::eliminarPrestamo(Objeto *o){
+    if (prestado != nullptr){
     Prestados *aux = prestado;
-    if(prestado->obj = o){
+    if(prestado->obj == o){
         delete prestado->obj;
         prestado = prestado->sig;
         delete aux;
     }else{
+        cout << aux->obj->getNombre()<<endl;
+        cout << o->getNombre();
         while(aux->sig->obj != o){
             aux = aux->sig;
         }
@@ -77,6 +81,7 @@ void Child::eliminarPrestamo(Objeto *o){
         aux->sig = aux->sig->sig;
         delete borrar->obj;
         delete borrar;
+    }
     }
 }
 
