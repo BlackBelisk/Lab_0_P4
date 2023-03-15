@@ -56,7 +56,7 @@ void Child:: nuevoPrestamo(Objeto *o){
 set<string> Child:: listarObjetosPrestados(){
     set<string> prestamos;
     Prestados *aux = prestado;
-    while(aux->sig != nullptr){
+    while(aux != nullptr){
         prestamos.insert(aux->obj->toString());
         aux = aux->sig;
     }
