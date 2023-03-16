@@ -1,26 +1,25 @@
-CXX = g++
-CXXFLAGS = -std=c++11 -Wall -Wextra -pedantic -I./include
-LDFLAGS =
-SRC_DIR = src
-OBJ_DIR = include
-BIN_DIR = bin
-TARGET = $(BIN_DIR)/principal
+CC=gcc
+CFLAGS=-c -Wall -Wextra -std=c++11
+LDFLAGS = -lstdc++
+INCLUDES=-Iinclude
+SRCDIR=src
+OBJDIR=obj
 
-SRCS = $(wildcard $(SRC_DIR)/*.cpp)
-OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.h)
-DEPS = $(OBJS:.h=)
+SOURCES=$(wildcard $(SRCDIR)/*.cpp)
+OBJECTS=$(SOURCES:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
+MAINOBJ=$(OBJDIR)/principal.o
+EXECUTABLE=principal
 
-.PHONY: all clean
+all: $(SOURCES) $(EXECUTABLE)
 
-all: $(TARGET)
+$(EXECUTABLE): $(OBJECTS) $(MAINOBJ)
+	$(CC) $(LDFLAGS) $^ -o $@
 
-$(TARGET): $(OBJS)
-	$(CXX) $(LDFLAGS) -o $@ $^
+$(OBJDIR)/%.o: $(SRCDIR)/%.cpp
+	$(CC) $(CFLAGS) $(INCLUDES) $< -o $@
 
-$(OBJ_DIR)/%.h: $(SRC_DIR)/%.cpp
-	$(CXX) $(CXXFLAGS) -MMD -MP -c $< -o $@
+$(MAINOBJ): principal.cpp
+	$(CC) $(CFLAGS) $(INCLUDES) $< -o $@
 
 clean:
-	$(RM) $(OBJS) $(DEPS) $(TARGET)
-
--include $(DEPS)
+	rm -f $(OBJDIR)/*.o $(EXECUTABLE)
