@@ -17,7 +17,7 @@ Prestados::Prestados(Objeto *o){
     sig = nullptr;
 }
 
-Prestados* Prestados::anadirObj(Objeto *o){
+Prestados* Prestados::agregarObj(Objeto *o){
     Prestados *nuevo = new Prestados(o);
     nuevo->sig = this;
     return nuevo;
@@ -57,7 +57,7 @@ Child::Child(string nom, int ed, string dir, string tel, Objeto* obj){
 }
 
 void Child:: nuevoPrestamo(Objeto *o){
-    prestado = prestado->anadirObj(o);
+    prestado = prestado->agregarObj(o);
 }
 
 set<string> Child:: listarObjetosPrestados(){

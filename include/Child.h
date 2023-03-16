@@ -15,7 +15,7 @@ class Prestados{
             Prestados *sig;
             Prestados();
             Prestados(Objeto *o);
-            Prestados* anadirObj(Objeto *o);
+            Prestados* agregarObj(Objeto *o);
             string getObj();
 };
 
