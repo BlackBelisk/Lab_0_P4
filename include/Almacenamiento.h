@@ -13,31 +13,15 @@
 #include "Utils.h"
 
 using namespace std;
-//Estoy pensando en cambiar estos vectores por una <list>, pero depende de que precisemos con lo del main
-//También tengo una double linked list pre implementada de ser necesario, pero está más sencillo esto
-//Dios se apiade de nosotros
-
-namespace vectorObjeto{
-    //Vector de almacenamiento para Objetos
-    extern vector<Objeto*> Objetos;
-    void crearLibro(string, int, estado, string, int);
-    void crearJuegoMesa(string, int, estado, int, int);
-    void agregarObjeto(Objeto*);
-    void eliminarObjeto(Objeto*);
-}
-
-namespace vectorChild{
-    //Vector de almacenamiento para personas
-   extern vector<Child*> Personas;
-    void crearPersona(string, int, string, string);
-    void agregarPersona(Child*);
-    void eliminarPersona(Child*);
-}
 
 namespace vectorObjetoRoto{
-    //Vector de almacenamiento de ObjetosRotos
+    //Vector de almacenamiento de ObjetosRotos, variable global
     extern vector<DTObjetoRoto> ObjRotos;
+
+    //Agrega un DTObjetoRoto al vector ObjRotos
     void agregarRoto(DTObjetoRoto);
+
+    //Elimina un DTObjetoRoto solo si lo encuentra en ObjRotos
     void eliminarRoto(DTObjetoRoto);
 }
 
