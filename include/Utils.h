@@ -10,5 +10,7 @@ using namespace std;
 
 //Realiza un prestamo
 void hacerPrestamo(Child*, Objeto*);
+
+//Deshace un prestamo
 void devolverPrestamo(Child*, Objeto*);
 #endif

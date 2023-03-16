@@ -15,9 +15,13 @@
 using namespace std;
 
 namespace vectorObjetoRoto{
-    //Vector de almacenamiento de ObjetosRotos
+    //Vector de almacenamiento de ObjetosRotos ObjRotos (Variable global)
     extern vector<DTObjetoRoto> ObjRotos;
+
+    //Agrega un DTObjetoRoto al vector ObjRotos
     void agregarRoto(DTObjetoRoto);
+
+    //Elimina un DTObjetoRoto sí y solo sí se encuentra en el vector ObjRotos
     void eliminarRoto(DTObjetoRoto);
 }
 

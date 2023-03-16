@@ -45,5 +45,3 @@ std::ostream& operator<<(std::ostream& os, const DTObjetoRoto& o) {
        return os << o.nombreObjeto << ", prestado: NO";
     }
 }
-
-//Recordatorio: crear otro .h con las listas que piden, lei la propuesta medio en diagonal pero si no me equivoco serian la lista de objetos, la de personas y la de objetos rotos

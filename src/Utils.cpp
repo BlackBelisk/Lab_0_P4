@@ -5,7 +5,6 @@
 #include "../include/Objeto.h"
 #include "../include/Utils.h"
 
-
 using namespace std;
 
 void hacerPrestamo(Child* c, Objeto* o){
