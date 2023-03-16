@@ -91,6 +91,7 @@ int main(){
     delete maria;
     delete libro1;
     delete libro2;
+    delete libro3;
     delete juego1;
     delete juego2;
     delete juego3;
