@@ -23,7 +23,7 @@ class Objeto{
         Child* owner;
         Objeto(string, int, estado);
     public: 
-        virtual ~Objeto();
+        ~Objeto();
 
         virtual string toString() = 0;
 
