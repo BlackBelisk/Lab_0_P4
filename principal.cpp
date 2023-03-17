@@ -73,6 +73,7 @@ int main(){
     rotos[4] = juego2;
     rotos[5] = juego3;
     cout << endl;
+
     for(int i=0; i<6; i++){
         if (rotos[i]->getEstado() == Roto){
             if (rotos[i]->getPrestado() == NULL){                   //Si no esta prestado solo se crea el DTObjetoRoto con el nombre del Objeto
@@ -85,20 +86,30 @@ int main(){
             }
         }
     }
+
     for(auto it = ObjRotos.begin() ; it != ObjRotos.end(); it++){
         cout << *it << endl;
     }
     for (int i = 0; i < 6; i++){rotos[i] = nullptr;}
 
+    cout << "Borrar: " + juego1->getNombre() << endl;
+    delete juego1;
+
+    cout << endl << "Objetos prestados de Alex:" <<endl;
+    set <string> b = alex->listarObjetosPrestados();
+    for(auto it = b.begin() ; it != b.end(); it++){
+        cout << *it << endl;
+    }
     
-    
-    
+cout << endl << "Objetos rotos: " << endl;
+for(auto it = ObjRotos.begin() ; it != ObjRotos.end(); it++){
+        cout << *it << endl;
+    }
     /*Liberacion de Memoria*/
     delete maria;
     delete libro1;
     delete libro2;
     delete libro3;
-    delete juego1;
     delete juego2;
     delete juego3;
     delete alex;
