@@ -62,6 +62,8 @@ int main(){
     }
     
     /*parte g*/ //  CONSULTAR OBJETOS ROTOS
+    cout << "Objetos rotos: " << endl;
+    
     Objeto *rotos[6];
     rotos[0] = libro1;
     rotos[1] = libro2;
