@@ -48,14 +48,6 @@ Child::~Child(){
     }
 }
 
-Child::Child(string nom, int ed, string dir, string tel, Objeto* obj){
-    nombre = nom;
-    edad = ed;
-    direccion = dir;
-    telefono = tel;
-    prestado = new Prestados(obj);
-}
-
 void Child:: nuevoPrestamo(Objeto *o){
     prestado = prestado->agregarObj(o);
 }

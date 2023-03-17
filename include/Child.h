@@ -27,12 +27,22 @@ class Child{
         string telefono;
         Prestados *prestado;
     public:
+        //Constructor de un elemento de clase Child
         Child(string, int, string, string);
+
+        //Elimina un elemento de tipo Child y toda la memoria asociada a sus links, así como actualizar los objetos que tenía prestados
         ~Child();
-        Child(string, int, string, string, Objeto*);
+
+        //Crea un nuevo préstamo para Child
         void nuevoPrestamo(Objeto*);
+
+        //Elimina un préstamo para Child
         void eliminarPrestamo(Objeto*);
+
+        //Crea un set con los objetos que Child tiene prestados actualmente
         set<string> listarObjetosPrestados();
+
+        //Retorna el nombre del Child
         string getChild();
 };
 
