@@ -89,7 +89,41 @@ int main(){
     }
     for (int i = 0; i < 6; i++)
         rotos[i] = nullptr;
-    /*parte h*/  //ELIMINAR OBJETO 
+    
+    
+    /*parte h*/  //ELIMINAR OBJETO
+    int i;                                                  //objeto a borrar
+    Objeto *lista_obj[6];
+    lista_obj[0] = libro1;
+    lista_obj[1] = libro2;
+    lista_obj[2] = libro3;
+    lista_obj[3] = juego1;
+    lista_obj[4] = juego2;
+    lista_obj[5] = juego3;
+    
+    
+    cout << "Lista de objetos: " << endl;                   //imprimir lista de objetos y selecciona cual se borra
+    for(i=0; i<6; i++){
+        cout << i+1 << "- " << lista_obj[i] << endl;
+    }
+    
+    cout << "Ingrese el digito del objeto a borrar: " << endl; 
+    cin << i;
+    Objetos *obj = listado_objetos[i];
+    
+    if (obj->getPrestado() != NULL){                         //Si el objeto lo tiene un nino elimina el vinculo
+        obj->getPrestado()->eliminarPrestamo(obj);
+    }
+    
+    if (obj->getEstado() == Roto){                           //Si el objeto esta roto borra el objeto de la lista objetos rotos
+        eliminarRoto(obj);
+    }
+    
+    delete obj;                                             //Elimina el Objeto
+    
+    
+    
+    /*Liberacion de Memoria*/
     delete maria;
     delete libro1;
     delete libro2;
