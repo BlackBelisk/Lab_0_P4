@@ -104,7 +104,7 @@ int main(){
     
     cout << "Lista de objetos: " << endl;                   //imprimir lista de objetos y selecciona cual se borra
     for(i=0; i<6; i++){
-        cout << i+1 << "- " << lista_obj[i] << endl;
+        cout << i+1 << "- " << lista_obj[i]->getNombre() << endl;
     }
     
     cout << "Ingrese el digito del objeto a borrar: " << endl; 
