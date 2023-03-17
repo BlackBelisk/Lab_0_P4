@@ -109,7 +109,7 @@ int main(){
     
     cout << "Ingrese el digito del objeto a borrar: " << endl; 
     cin << i;
-    Objetos *obj = listado_objetos[i];
+    Objetos *obj = listado_objetos[i-1];
     
     if (obj->getPrestado() != NULL){                         //Si el objeto lo tiene un nino elimina el vinculo
         obj->getPrestado()->eliminarPrestamo(obj);
