@@ -55,14 +55,15 @@ int main(){
     for(auto it = m.begin() ; it != m.end(); it++){
          cout << *it <<endl;
     }
-    cout << "Objetos prestados de Alex:" <<endl;
+    
+    cout << endl << "Objetos prestados de Alex:" <<endl;
     set <string> a = alex->listarObjetosPrestados();
     for(auto it = a.begin() ; it != a.end(); it++){
         cout << *it << endl;
     }
     
     /*parte g*/ //  CONSULTAR OBJETOS ROTOS
-    cout << "Objetos rotos: " << endl;
+    cout << endl << "Objetos rotos: " << endl;
     
     Objeto *rotos[6];
     rotos[0] = libro1;
@@ -87,39 +88,8 @@ int main(){
     for(auto it = ObjRotos.begin() ; it != ObjRotos.end(); it++){
         cout << *it << endl;
     }
-    for (int i = 0; i < 6; i++)
-        rotos[i] = nullptr;
-    
-    
-    /*parte h*/  //ELIMINAR OBJETO
-    int i;                                                  //objeto a borrar
-    Objeto *lista_obj[6];
-    lista_obj[0] = libro1;
-    lista_obj[1] = libro2;
-    lista_obj[2] = libro3;
-    lista_obj[3] = juego1;
-    lista_obj[4] = juego2;
-    lista_obj[5] = juego3;
-    
-    
-    cout << "Lista de objetos: " << endl;                   //imprimir lista de objetos y selecciona cual se borra
-    for(i=0; i<6; i++){
-        cout << i+1 << "- " << lista_obj[i]->getNombre() << endl;
-    }
-    
-    cout << "Ingrese el digito del objeto a borrar: " << endl; 
-    cin << i;
-    Objetos *obj = listado_objetos[i-1];
-    
-    if (obj->getPrestado() != NULL){                         //Si el objeto lo tiene un nino elimina el vinculo
-        obj->getPrestado()->eliminarPrestamo(obj);
-    }
-    
-    if (obj->getEstado() == Roto){                           //Si el objeto esta roto borra el objeto de la lista objetos rotos
-        eliminarRoto(obj);
-    }
-    
-    delete obj;                                             //Elimina el Objeto
+    for (int i = 0; i < 6; i++){rotos[i] = nullptr;}
+
     
     
     
