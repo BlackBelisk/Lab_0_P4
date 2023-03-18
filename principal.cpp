@@ -14,23 +14,30 @@ using namespace std;
 using namespace vectorObjetoRoto;
 int main(){
 
+    vector<Objeto*> SetObjetos;
+
     /*parte a*/  //Ingresa Libros
     Libro *libro1 = new Libro("Nacidos de la bruma: El imperio final", 2022, Roto, "Brandon Sanderson", 688);
+    SetObjetos.push_back(libro1);
     Libro *libro2 = new Libro("Las Malas", 2022, Nuevo, "Camila Sosa Villada", 240);
+    SetObjetos.push_back(libro2);
     Libro *libro3 = new Libro("El cocodrilo al que no le gustaba el agua", 2016, Roto, "Gemma Merino", 32);
+    SetObjetos.push_back(libro3);
     
     /*parte b*/  //Ingresa Juegos
     JuegoMesa *juego1 = new JuegoMesa("Juego Uno", 2022, Roto, 7, 10);
+    SetObjetos.push_back(juego1);
     JuegoMesa *juego2 = new JuegoMesa("Mazo de Cartas", 2019, Nuevo, 7, 4);
+    SetObjetos.push_back(juego2);
     JuegoMesa *juego3 = new JuegoMesa("Dados", 2020, Roto, 2, 6);
+    SetObjetos.push_back(juego3);
     
     /*parte c*/
-    cout << libro1->toString() << endl;
-    cout << libro2->toString() << endl;
-    cout << libro3->toString() << endl;
-    cout << juego1->toString() << endl;
-    cout << juego2->toString() << endl;
-    cout << juego3->toString() << endl;
+    for (auto it = SetObjetos.begin(); it != SetObjetos.end(); it++)
+    {
+       cout << (*it)->toString() <<endl;
+    }
+
     
     /*parte d*/  //Crea Ninos
     Child *maria = new Child("María Laura", 10, "Nueva Palmira 1521", "099298190");
@@ -65,16 +72,31 @@ int main(){
     /*parte g*/ //  CONSULTAR OBJETOS ROTOS
     cout << endl << "Objetos rotos: " << endl;
     
-    Objeto *rotos[6];
+    /* Objeto *rotos[6];
     rotos[0] = libro1;
     rotos[1] = libro2;
     rotos[2] = libro3;
     rotos[3] = juego1;
     rotos[4] = juego2;
-    rotos[5] = juego3;
+    rotos[5] = juego3; */
     cout << endl;
 
-    for(int i=0; i<6; i++){
+    for (auto it = SetObjetos.begin(); it != SetObjetos.end(); it++){
+        if ((*it)->getEstado() == Roto){
+            if ((*it)->getPrestado() == NULL){                          //Si no esta prestado solo se crea el DTObjetoRoto con el nombre del Objeto
+                DTObjetoRoto r((*it)->getNombre(), false);
+                agregarRoto(r);
+            } else {                                                    //Si esta prestado se crea el DTObjetoRoto con el nombre del Objeto, true y nombre del nino
+                DTObjetoRoto r((*it)->getNombre(), true, (*it)->getPrestado()->getChild());
+                agregarRoto(r);
+            }
+            
+        }
+        
+    }
+    
+
+    /*for(int i=0; i<6; i++){
         if (rotos[i]->getEstado() == Roto){
             if (rotos[i]->getPrestado() == NULL){                   //Si no esta prestado solo se crea el DTObjetoRoto con el nombre del Objeto
                 DTObjetoRoto r(rotos[i]->getNombre(), false);
@@ -85,14 +107,15 @@ int main(){
                 agregarRoto(r);
             }
         }
-    }
+    }*/
 
     for(auto it = ObjRotos.begin() ; it != ObjRotos.end(); it++){
         cout << *it << endl;
     }
-    for (int i = 0; i < 6; i++){rotos[i] = nullptr;}
+    /* for (int i = 0; i < 6; i++){rotos[i] = nullptr;} */
 
     cout << "Borrar: " + juego1->getNombre() << endl;
+    SetObjetos.erase(SetObjetos.begin()+3);
     delete juego1;
 
     cout << endl << "Objetos prestados de Alex:" <<endl;
