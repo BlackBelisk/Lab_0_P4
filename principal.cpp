@@ -50,7 +50,7 @@ int main(){
     hacerPrestamo(alex, libro3);
     
     /*parte f*/  //Listar Objetos Prestados de cada nino
-    cout << "Objetos prestados de Maria:"<<endl;
+    cout << endl << "Objetos prestados de Maria:"<<endl;
     set <string> m = maria->listarObjetosPrestados();
     for(set<string>::iterator papa = m.begin() ; papa != m.end(); papa++){
          cout << *papa <<endl;
@@ -64,7 +64,6 @@ int main(){
     
     /*parte g*/ //  CONSULTAR OBJETOS ROTOS
     cout << endl << "Objetos rotos: " << endl;
-    cout << endl;
 
     for (vector<Objeto*>::iterator it = SetObjetos.begin(); it != SetObjetos.end(); it++){
         if ((*it)->getEstado() == Roto){
@@ -84,7 +83,7 @@ int main(){
         cout << *zanahoria << endl;
     }
 
-    cout << "Borrar: " + juego1->getNombre() << endl;
+    cout << endl << "Borrar: " + juego1->getNombre() << endl;
     SetObjetos.erase(SetObjetos.begin()+3);
     delete juego1;
 
