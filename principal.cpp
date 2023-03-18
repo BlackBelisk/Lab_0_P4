@@ -33,12 +33,11 @@ int main(){
     SetObjetos.push_back(juego3);
     
     /*parte c*/
-    for (auto it = SetObjetos.begin(); it != SetObjetos.end(); it++)
+    for (vector<Objeto*>::iterator iter = SetObjetos.begin(); iter != SetObjetos.end(); iter++)
     {
-       cout << (*it)->toString() <<endl;
+       cout << (*iter)->toString() <<endl;
     }
 
-    
     /*parte d*/  //Crea Ninos
     Child *maria = new Child("María Laura", 10, "Nueva Palmira 1521", "099298190");
     Child *alex = new Child("Alex", 5, "Humberto Primo 1501", "29094141");
@@ -49,41 +48,27 @@ int main(){
     hacerPrestamo(maria, juego3);
     hacerPrestamo(alex, juego1);
     hacerPrestamo(alex, libro3);
-    /*maria->nuevoPrestamo(juego2);
-    maria->nuevoPrestamo(libro1);
-    maria->nuevoPrestamo(juego3);
-    alex->nuevoPrestamo(juego1);
-    alex->nuevoPrestamo(libro3);
-    */
     
     /*parte f*/  //Listar Objetos Prestados de cada nino
     cout << "Objetos prestados de Maria:"<<endl;
     set <string> m = maria->listarObjetosPrestados();
-    for(auto it = m.begin() ; it != m.end(); it++){
-         cout << *it <<endl;
+    for(set<string>::iterator papa = m.begin() ; papa != m.end(); papa++){
+         cout << *papa <<endl;
     }
     
     cout << endl << "Objetos prestados de Alex:" <<endl;
     set <string> a = alex->listarObjetosPrestados();
-    for(auto it = a.begin() ; it != a.end(); it++){
-        cout << *it << endl;
+    for(set<string>::iterator bon = a.begin() ; bon != a.end(); bon++){
+        cout << *bon << endl;
     }
     
     /*parte g*/ //  CONSULTAR OBJETOS ROTOS
     cout << endl << "Objetos rotos: " << endl;
-    
-    /* Objeto *rotos[6];
-    rotos[0] = libro1;
-    rotos[1] = libro2;
-    rotos[2] = libro3;
-    rotos[3] = juego1;
-    rotos[4] = juego2;
-    rotos[5] = juego3; */
     cout << endl;
 
-    for (auto it = SetObjetos.begin(); it != SetObjetos.end(); it++){
+    for (vector<Objeto*>::iterator it = SetObjetos.begin(); it != SetObjetos.end(); it++){
         if ((*it)->getEstado() == Roto){
-            if ((*it)->getPrestado() == NULL){                          //Si no esta prestado solo se crea el DTObjetoRoto con el nombre del Objeto
+            if ((*it)->getPrestado() == nullptr){                          //Si no esta prestado solo se crea el DTObjetoRoto con el nombre del Objeto
                 DTObjetoRoto r((*it)->getNombre(), false);
                 agregarRoto(r);
             } else {                                                    //Si esta prestado se crea el DTObjetoRoto con el nombre del Objeto, true y nombre del nino
@@ -94,25 +79,10 @@ int main(){
         }
         
     }
-    
 
-    /*for(int i=0; i<6; i++){
-        if (rotos[i]->getEstado() == Roto){
-            if (rotos[i]->getPrestado() == NULL){                   //Si no esta prestado solo se crea el DTObjetoRoto con el nombre del Objeto
-                DTObjetoRoto r(rotos[i]->getNombre(), false);
-                agregarRoto(r);
-            }
-            else{                                              //Si esta prestado se crea el DTObjetoRoto con el nombre del Objeto, true y nombre del nino
-                DTObjetoRoto r(rotos[i]->getNombre(), true, rotos[i]->getPrestado()->getChild());
-                agregarRoto(r);
-            }
-        }
-    }*/
-
-    for(auto it = ObjRotos.begin() ; it != ObjRotos.end(); it++){
-        cout << *it << endl;
+    for(vector<DTObjetoRoto>::iterator zanahoria = ObjRotos.begin() ; zanahoria != ObjRotos.end(); zanahoria++){
+        cout << *zanahoria << endl;
     }
-    /* for (int i = 0; i < 6; i++){rotos[i] = nullptr;} */
 
     cout << "Borrar: " + juego1->getNombre() << endl;
     SetObjetos.erase(SetObjetos.begin()+3);
@@ -120,14 +90,15 @@ int main(){
 
     cout << endl << "Objetos prestados de Alex:" <<endl;
     set <string> b = alex->listarObjetosPrestados();
-    for(auto it = b.begin() ; it != b.end(); it++){
-        cout << *it << endl;
+    for(set<string>::iterator remolacha = b.begin() ; remolacha != b.end(); remolacha++){
+        cout << *remolacha << endl;
     }
     
 cout << endl << "Objetos rotos: " << endl;
-for(auto it = ObjRotos.begin() ; it != ObjRotos.end(); it++){
-        cout << *it << endl;
+for(vector<DTObjetoRoto>::iterator vegetal = ObjRotos.begin() ; vegetal != ObjRotos.end(); vegetal++){
+        cout << *vegetal << endl;
     }
+
     /*Liberacion de Memoria*/
     delete maria;
     delete libro1;
